@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mad Libs Game!</h1>
+    <form id="madLibForm" action="/submit" method="POST">
+        <div class="input-field">
+            <label for="adjective">Adjective:</label>
+            <input type="text" id="adjective" name="adjective" required>
+        </div>
+        <div class="input-field">
+            <label for="noun">Noun:</label>
+            <input type="text" id="noun" name="noun" required>
+        </div>
+        <div class="input-field">
+            <label for="verb">Verb:</label>
+            <input type="text" id="verb" name="verb" required>
+        </div>
+        <div class="input-field">
+            <label for="adverb">Adverb:</label>
+            <input type="text" id="adverb" name="adverb" required>
+        </div>
+        <div class="input-field">
+            <label for="pluralNoun">Plural Noun:</label>
+            <input type="text" id="pluralNoun" name="pluralNoun" required>
+        </div>
+        <button type="submit">Create Story</button>
+    </form>
+    <div>
+        <h2>Addendum</h2>
+        <p>The HTML document sets up a basic web-based Mad Libs game that allows users to input words into five designated categories: an adjective, a noun, a verb, an adverb, and a plural noun. Upon submitting, these inputs are sent as a POST request to a server endpoint specified as `/submit`. The form styling is linked through an external file called `styles.css`. Additionally, the page features a footer which shows the last modification date of the document. This is achieved by using JavaScript to dynamically obtain and show the `document.lastModified` value, which is displayed in a `<span>` element with the ID `lastModified`. This functionality offers users a straightforward dynamic interaction, keeping them informed of the latest update to the document. The CSS code provided styles an HTML page by improving the aesthetics of text, headings, form elements, labels, and buttons. It applies Arial, a sans-serif font, to the body, sets a margin of 20px around the content, and uses a soft gray background color (`#f4f4f9`). The heading (`h1`) is colored in dark gray (`#333`). For form components, each `.input-field` division has a 10px margin below it for spacing, and each `label` includes a 10px margin on its right to ensure separation from its input field. Text inputs are styled with 8px padding, a 1px solid border in light gray (`#ccc`), and slightly rounded corners at 4px radius. Buttons feature 10px of vertical padding, 20px horizontal padding, a bright blue background color (`#5c67f2`), white text, no borders, 5px rounded corners, and a pointer cursor to indicate interactiveness. On hover, the button background changes to a darker blue (`#484fb4`), providing an interactive visual cue. These stylistic choices enhance the visual appeal and functionality of the user interface, creating a more engaging and user-friendly experience. The JSON object shown is a segment from a `package.json` file, commonly used in Node.js projects to define various project settings, including dependencies. Here’s a breakdown of what each part signifies:dependencies: This section lists the libraries that your project requires to function correctly. When you execute `npm install` or `yarn install`, these dependencies are installed into your project's `node_modules` directory. They are crucial for the app to operate correctly in a production environment express: `^4.19.2`This line indicates that the application depends on the Express.js framework, a lightweight and adaptable framework for building web and mobile apps using Node.js. The caret (`^`) symbol means npm can update to any newer version that is compatible, i.e., any version that is 4.x.x but at least 4.19.2 and below 5.0.0.forever: `^4.0.3` This line denotes a dependency on Forever, a CLI tool that keeps a script running continuously, used widely in production to ensure Node.js servers remain active even after crashing or stopping unexpectedly. The version specification allows for updates within the major version 4, without moving to a new major version that could include breaking changes.morgan: `^1.10.0`This dependency is for Morgan, a middleware used mainly with Express.js for logging details about requests. It aids in debugging and monitoring applications both in development and production phases. The versioning rule here similarly allows updates within the major version 1, adopting new minor and patch versions automatically.This part of the `package.json` file employs npm's semantic versioning shorthand using the caret (`^`), which facilitates the auto-updating of dependencies to include the latest minor or patch releases without manually modifying the package version in the file. This approach helps maintain dependencies updated and secure while avoiding potentially disruptive changes that major updates might bring.</p>
+    </div>
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
